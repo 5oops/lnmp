@@ -1,6 +1,5 @@
-#!/bin/bash
-PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
-export PATH
+#!/usr/bin/env bash
+export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 
 # Check if user is root
 if [ $(id -u) != "0" ]; then
@@ -101,7 +100,6 @@ Init_Install()
         CentOS_Lib_Opt
     elif [ "$PM" = "apt" ]; then
         Deb_Lib_Opt
-        Deb_Check_MySQL
     fi
     if [ "${DBSelect}" = "1" ]; then
         Install_MySQL_51
